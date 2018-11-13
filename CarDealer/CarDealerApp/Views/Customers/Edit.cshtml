@@ -3,18 +3,17 @@
 @{
     ViewBag.Title = "Edit";
 }
-
 <h2>Edit</h2>
 
 <form method="post">
     <input type="number" name="Id" hidden="hidden" value="@Model.Id" />
     <div class="form-group">
         <label for="name">Name: </label>
-        <input id="name" type="text" value="@Model.Name" name="name" class="form-control"/>
+        <input type="text" id="name" value="@Model.Name" name="name" class="form-group" />
     </div>
     <div class="form-group">
-        <label for="birthDate">Birth date: </label>
-        <input id="birthDate" type="date" value="@Model.BirthDate.ToString("yyyy-MM-dd")" name="birthdate" class="form-control"/>
+        <label for="birthdate">BirthDate: </label>
+        <input type="text" id="birthdate" name="birthdate" class="form-group" value="@Model.BirthDate" />
     </div>
     <div class="form-group">
         <input type="submit" value="Submit"/>

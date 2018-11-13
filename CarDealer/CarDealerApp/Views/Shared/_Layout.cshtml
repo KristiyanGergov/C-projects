@@ -20,8 +20,16 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="/customers/all/ascending">Customers</a>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                            Customers
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                @Html.ActionLink("All", "All", "Customers")
+                            </li>
+                        </ul>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" type="button" data-toggle="dropdown">
@@ -29,11 +37,35 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="/sales">All</a></li>
-                            <li><a href="/sales/discounted">Discounted</a></li>
+                            <li>@Html.ActionLink("All", "All", "Sales")</li>
+                            <li>@Html.ActionLink("Discounted", "Discounted", "Sales")</li>
                         </ul>
-                    </li> 
-                    <li><a href="/cars">Cars</a></li>
+                    </li>
+                    <li>@Html.ActionLink("Cars", "All", "Cars" )</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                            Suppliers
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Local", "All", "Suppliers", new { type = "local" }, null)</li>
+                            <li>@Html.ActionLink("Importers", "All", "Suppliers", new { type = "importers" }, null)</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@ViewBag.Username</li>
+                    <li>
+                        <a href="/user/register/">Register</a>
+                    </li>
+                    <li>
+                        <a href="/user/login/">Login</a>
+                    </li>
+                    <li>
+                        <form method="post" action="/user/logout/">
+                            <input type="submit" value="Logout" class="form-control" />
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>

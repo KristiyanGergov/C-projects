@@ -1,0 +1,48 @@
+﻿@model CompanyRegister.Models.Entity.Employee
+@{
+    ViewBag.Title = "Details";
+}
+<script src="~/Scripts/jquery-3.2.1.min.js"></script>
+<link href="~/Styles/All.css" rel="stylesheet" />
+
+<div>
+    <h3>@Html.DisplayFor(vm => vm.FirstName) @Html.DisplayFor(vm => vm.SecondName) @Html.DisplayFor(vm => vm.LastName)</h3>
+    <br />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateHired)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateHired)
+        </dd>
+    </dl>
+</div>
+
+
+<p>
+    @Html.ActionLink("Back to all", "All", "Employee", new {@id = "details" })
+</p>

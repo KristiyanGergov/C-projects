@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Add Course</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.Label("Name")
+        @Html.Editor("Name", new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <div class="form-group">
+        @Html.Label("Description")
+        @Html.Editor("description", new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <div class="form-group">
+        @Html.Label("Start date")
+        @Html.Editor("startDate", new { htmlAttributes = new { @class = "form-control" , @type= "date"} })
+
+    </div>
+    <div class="form-group">
+        @Html.Label("End date")
+        @Html.Editor("endDate", new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-primary" />
+        @Html.ActionLink("Cancel and return to Courses", "All", "Admin", new {@class = "btn btn-default" })
+    </div>
+}

@@ -1,0 +1,10 @@
+﻿@model LearningSystem.Domain.Entity.Student
+@{
+    ViewBag.Title = "SignUp";
+}
+
+@foreach (var item in Model.Courses)
+{
+    <p><strong>You have signed up for @item.Name course</strong></p>   
+}
+@Html.ActionLink("See all courses", "All", "Course", new {@class = "btn btn-primary" })

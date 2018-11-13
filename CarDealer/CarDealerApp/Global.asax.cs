@@ -1,14 +1,20 @@
-﻿using System.Linq;
-using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Web.Routing;
-using AutoMapper;
-using CarDealer.Models.BindingModels;
-using CarDealer.Models.EntityModels;
-using CarDealer.Models.ViewModels;
-
-namespace CarDealerApp
+﻿namespace CarDealerApp
 {
+    using System.Linq;
+    using System.Web.Mvc;
+    using System.Web.Optimization;
+    using System.Web.Routing;
+    using AutoMapper;
+    using CarDealer.Models.EntityModels;
+    using CarDealer.Models.ViewModels;
+    using CarDealer.Models.BindingModels;
+    using System.Data.Entity;
+    using CarDealer.Data;
+    using CarDealer.Models.ViewModels.Sales;
+    using CarDealer.Models.BindingModels.Suppliers;
+    using CarDealer.Models.ViewModels.Suppliers;
+    using System.Collections.Generic;
+
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
@@ -18,6 +24,7 @@ namespace CarDealerApp
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<CarDealerContext>());
         }
 
         private void RegisterMaps()
@@ -37,14 +44,20 @@ namespace CarDealerApp
                     configurationExpression.MapFrom(sale =>
                             sale.Car.Parts.Sum(part => part.Price)));
                 expression.CreateMap<AddCustomerBm, Customer>();
-                expression.CreateMap<EditCustomerBm, Customer>();
-                expression.CreateMap<Customer, EditCustomerVm>();
-                expression.CreateMap<EditCustomerBm, EditCustomerVm>();
                 expression.CreateMap<AddPartBm, Part>();
                 expression.CreateMap<Part, AllPartVm>();
-                expression.CreateMap<Part, DeletePartVm>();
+                expression.CreateMap<EditCustomerBm, Customer>();
+                expression.CreateMap<Customer, EditCustomerVm>();
                 expression.CreateMap<Part, EditPartVm>();
-                expression.CreateMap<AddCarBm, Car>().ForMember(car => car.Parts, configurationExpression => configurationExpression.Ignore());
+                expression.CreateMap<Part, DeletePartVm>();
+                expression.CreateMap<AddCarBm, Car>().ForMember(car => car.Parts, config => config.Ignore());
+                expression.CreateMap<RegisterUserBm, User>();
+                expression.CreateMap<Car, AddSaleCarVm>();
+                expression.CreateMap<Customer, AddSaleCustomerVm>();
+                expression.CreateMap<AddSupplierBm, Supplier>();
+                expression.CreateMap<Supplier, EditSupplierVm>();
+                expression.CreateMap<Supplier, DeleteSupplierVm>();
+                expression.CreateMap<Supplier, SupplierAllVm>();
             });
         }
     }

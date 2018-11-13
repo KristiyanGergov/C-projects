@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+@{
+    ViewBag.Title = "Register";
+}
+<h2>Login User</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="username">Username: </label>
+        <input type="text" name="username" class="form-control" id="username" />
+
+    </div>
+    <div class="form-group">
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input class="btn btn-default" type="submit" value="Login" />
+        <a class="btn btn-default" href="/User/Register">Register</a>
+    </div>
+</form>
+

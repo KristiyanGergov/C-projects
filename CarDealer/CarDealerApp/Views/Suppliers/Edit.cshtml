@@ -1,0 +1,21 @@
+﻿@using CarDealer.Models.ViewModels.Suppliers
+@model EditSupplierVm
+@{
+    ViewBag.Title = "Edit";
+}
+<h2>Edit</h2>
+<form method="post">
+    <input type="number" name="supplierId" value="@Model.Id" hidden="hidden" />
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" name="name" class="form-control" value="@Model.Name" />
+    </div>
+    <div class="form-group">
+        <label for="isImporter">IsImporter:</label>
+        <input name="isImporter" class="form-control" @if (Model.IsImporter) { @: checked="checked"
+               	} type="checkbox" />
+    </div>
+    <div>
+        <input class="form-control" type="submit" value="Edit" />
+    </div>
+</form>

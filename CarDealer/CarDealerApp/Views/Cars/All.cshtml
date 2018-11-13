@@ -1,12 +1,13 @@
 ﻿@using CarDealer.Models.ViewModels
 @model IEnumerable<CarVm>
+
 @{
     ViewBag.Title = "All";
 }
 
 <h2>All</h2>
+@Html.ActionLink("Add car", "Add", null, new {@class = "btn btn-primary"})
 
-<a href="/cars/add" class="btn btn-primary">Add car</a>
 <table class="table table-striped">
     <tr>
         <th>Make</th>

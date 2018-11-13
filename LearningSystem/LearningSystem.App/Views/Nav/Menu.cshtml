@@ -1,0 +1,16 @@
+﻿@model LearningSystem.Domain.Entity.Course
+@{
+    ViewBag.Title = "Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Menu</h2>
+<div>
+
+    @Html.RouteLink(Model.Name, new
+    {
+        controller = "Course",
+        action = "Search",
+        courseName = ViewBag.CourseName
+    })
+</div>

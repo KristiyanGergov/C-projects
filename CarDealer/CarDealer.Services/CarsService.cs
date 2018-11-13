@@ -1,19 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using AutoMapper;
-using CarDealer.Models.BindingModels;
-using CarDealer.Models.EntityModels;
-using CarDealer.Models.ViewModels;
-using Microsoft.SqlServer.Server;
-
-namespace CarDealer.Services
+﻿namespace CarDealer.Services
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using AutoMapper;
+    using CarDealer.Models.EntityModels;
+    using CarDealer.Models.ViewModels;
+    using CarDealer.Models.BindingModels;
     public class CarsService : Service
     {
         public IEnumerable<CarVm> GetCarsFromGivenMakeInOrder(string make)
         {
             IEnumerable<Car> cars;
-            if (make == null)
+            if (make == null || make == "All" || make == "all")
             {
                 cars = this.Context.Cars.OrderBy(car => car.Make).ThenByDescending(car => car.TravelledDistance);
             }
@@ -21,11 +19,9 @@ namespace CarDealer.Services
             {
                 cars = this.Context.Cars.Where(car => car.Make.Contains(make)).OrderBy(car => car.Make).ThenByDescending(car => car.TravelledDistance);
             }
-
             IEnumerable<CarVm> viewModels = Mapper.Instance.Map<IEnumerable<Car>, IEnumerable<CarVm>>(cars);
             return viewModels;
         }
-
         public AboutCarVm GetCarWithParts(int id)
         {
             Car wantedCar = this.Context.Cars.Find(id);
@@ -40,12 +36,12 @@ namespace CarDealer.Services
                 Parts = carPartsVms
             };
         }
-
         public void AddCar(AddCarBm bind)
         {
             Car model = Mapper.Map<AddCarBm, Car>(bind);
-            int[] partIds = bind.Parts.Split(' ').Select(int.Parse).ToArray();
-            foreach (var partId in partIds)
+            int[] partsId = bind.Parts.Split().Select(int.Parse).ToArray();
+
+            foreach (var partId in partsId)
             {
                 Part part = this.Context.Parts.Find(partId);
                 if (part != null)
@@ -55,6 +51,7 @@ namespace CarDealer.Services
             }
             this.Context.Cars.Add(model);
             this.Context.SaveChanges();
+
         }
     }
 }

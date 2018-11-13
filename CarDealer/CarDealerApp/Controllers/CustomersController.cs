@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
-using CarDealer.Models.BindingModels;
-using CarDealer.Models.ViewModels;
-using CarDealer.Services;
-
-namespace CarDealerApp.Controllers
+﻿namespace CarDealerApp.Controllers
 {
+    using System.Collections.Generic;
+    using System.Web.Mvc;
+    using CarDealer.Models.ViewModels;
+    using CarDealer.Services;
+    using CarDealer.Models.BindingModels;
+
     [RoutePrefix("customers")]
     public class CustomersController : Controller
     {
@@ -17,7 +17,7 @@ namespace CarDealerApp.Controllers
         }
 
         [HttpGet]
-        [Route("all/{order:regex(ascending|descending)}")]
+        [Route("{all?}/{order:regex(ascending|descending)?}")]
         public ActionResult All(string order)
         {
             IEnumerable<AllCustomerVm> viewModels = this.service.GetAllOrderedCustomers(order);
@@ -33,6 +33,7 @@ namespace CarDealerApp.Controllers
             return this.View(vm);
         }
 
+
         [HttpGet]
         [Route("add")]
         public ActionResult Add()
@@ -42,15 +43,14 @@ namespace CarDealerApp.Controllers
 
         [HttpPost]
         [Route("add")]
-        public ActionResult Add([Bind(Include = "Name,BirthDate")] AddCustomerBm bind)
+        public ActionResult Add([Bind(Include = "Name, BirthDate")] AddCustomerBm bind)
         {
             if (this.ModelState.IsValid)
             {
                 this.service.AddCustomerBm(bind);
+                return this.RedirectToAction("All", new { order = "Ascending" });
 
-                return this.RedirectToAction("All", new { order = "ascending" });
             }
-
             return this.View();
         }
 
@@ -59,21 +59,19 @@ namespace CarDealerApp.Controllers
         public ActionResult Edit(int id)
         {
             EditCustomerVm vm = this.service.GetEditVm(id);
-
             return this.View(vm);
         }
 
         [HttpPost]
         [Route("edit/{id}")]
-        public ActionResult Edit([Bind(Include = "Id,Name,BirthDate")] EditCustomerBm bind)
+        public ActionResult Edit([Bind(Include = "Id, Name, BirthDate")] EditCustomerBm bind)
         {
             if (this.ModelState.IsValid)
             {
-                this.service.EditCustomer(bind);
-                return this.RedirectToAction("All", new { order = "ascending" });
+                this.service.EditCustomerBm(bind);
+                return this.RedirectToAction("All", new { order = "Ascending" });
             }
-
-            return this.View(this.service.GetEditVm(bind.Id));
+            return View();
         }
     }
 }

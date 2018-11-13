@@ -1,15 +1,16 @@
-using System.Data.Entity.Migrations;
-
 namespace CarDealer.Data.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<CarDealer.Data.CarDealerContext>
+    using System.Data.Entity.Migrations;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<CarDealerContext>
     {
         public Configuration()
         {
+            AutomaticMigrationDataLossAllowed = true;
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(CarDealer.Data.CarDealerContext context)
+        protected override void Seed(CarDealerContext context)
         { 
         }
     }

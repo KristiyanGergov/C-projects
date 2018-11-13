@@ -1,0 +1,29 @@
+﻿@model CompanyRegister.Models.View.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_OperatorLayout.cshtml";
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Log In</h3>
+    </div>
+    <div class="panel-body">
+        <p>Please log in to access the administrator area:</p>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+            <div class="form-group">
+                <label>Username: </label>
+                @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Password: </label>
+                @Html.TextBoxFor(m => m.Password, new {@class = "form-control", @type= "password" })
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Log In" />
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@model LearningSystem.Domain.Entity.Course
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Edit course - "@Model.Name"</h2>
+<br />
+@Html.ValidationSummary(true, "", new {@class = "text-danger" })
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.Label("Name")
+        @Html.EditorFor(a => a.Name, new { htmlAttributes = new { @class = "form-control", @value = Model.Name } })
+    </div>
+    <div class="form-group">
+        @Html.Label("Description")
+        @Html.EditorFor(a => a.Description, new { htmlAttributes = new { @class = "form-control", @value = Model.Description } })
+    </div>
+    <div class="form-group">
+        @Html.Label("Start date")
+        @Html.EditorFor(b => b.StartDate, new { htmlAttributes = new { @class = "form-control", @value = @Model.StartDate} })
+    </div>
+    <div class="form-group">
+        @Html.Label("End date")
+        @Html.EditorFor(b => b.EndDate, new { htmlAttributes = new { @class = "form-control", @value = @Model.StartDate } })
+    </div>
+    <div class="form-group">
+        <input type="submit" name="name" class="btn btn-primary" value="Save" />
+        @Html.ActionLink("Cancel and back to courses","All", "Admin",new {@class = "btn btn-default" })
+    </div>
+}

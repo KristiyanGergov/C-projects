@@ -1,0 +1,41 @@
+﻿@model IEnumerable<LearningSystem.Domain.Entity.Course>
+@{
+    ViewBag.Title = "All";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-controller="Course" asp-action="All">
+    <div class="form-group">
+        <p>
+            <input type="text" name="name" class="form-control pull-left" placeholder="Course name...">
+            <input type="submit" class="btn btn-success right" value="Search" />
+        </p>
+    </div>
+</form>
+
+<table class="table table-striped">
+    <tr>
+        <th>Course</th>
+        <th>Description</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>@item.StartDate.ToString("dd/MM/yyyy")</td>
+            <td>@item.EndDate.ToString("dd/MM/yyyy")</td>
+            <td>
+                @using (Html.BeginForm("SignUp", "Course"))
+                {
+                    @Html.Hidden("courseId", item.Id)
+                    @Html.ActionLink("Sign Up", "SignUp", "Course", new { courseId = item.Id }, new { @class = "btn btn-success" })
+                }
+
+            </td>
+        </tr>
+    }
+</table>

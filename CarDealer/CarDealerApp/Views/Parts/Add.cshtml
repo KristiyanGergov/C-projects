@@ -5,7 +5,8 @@
 }
 
 <h2>Add</h2>
-<form method="post">
+@using (Html.BeginForm())
+{
     <div class="form-group">
         <label for="name">Name: </label>
         <input id="name" type="text" name="name" class="form-control" />
@@ -30,5 +31,4 @@
     <div class="form-group">
         <input type="submit" value="Submit" />
     </div>
-</form>
-
+}

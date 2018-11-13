@@ -30,11 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,33 +50,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BindingModels\AddCarBm.cs" />
-    <Compile Include="BindingModels\AddCustomerBm.cs" />
-    <Compile Include="BindingModels\AddPartBm.cs" />
-    <Compile Include="BindingModels\DeletePartBm.cs" />
-    <Compile Include="BindingModels\EditCustomerBm.cs" />
-    <Compile Include="BindingModels\EditPartBm.cs" />
+    <Compile Include="BindingModels\Logs\DeleteLogBm.cs" />
+    <Compile Include="BindingModels\Suppliers\AddSupplierBm.cs" />
+    <Compile Include="BindingModels\Cars\AddCarBm.cs" />
+    <Compile Include="BindingModels\Customers\AddCustomerBm.cs" />
+    <Compile Include="BindingModels\Sale\AddSaleBm.cs" />
+    <Compile Include="BindingModels\Suppliers\DeleteSupplierBm.cs" />
+    <Compile Include="BindingModels\Suppliers\EditSupplierBm.cs" />
+    <Compile Include="BindingModels\Users\LoginUserBm.cs" />
+    <Compile Include="BindingModels\Parts\AddPartBm.cs" />
+    <Compile Include="BindingModels\Parts\DeletePartBm.cs" />
+    <Compile Include="BindingModels\Customers\EditCustomerBm.cs" />
+    <Compile Include="BindingModels\Parts\EditPartBm.cs" />
+    <Compile Include="BindingModels\Users\RegisterUserBm.cs" />
     <Compile Include="EntityModels\Car.cs" />
     <Compile Include="EntityModels\Customer.cs" />
+    <Compile Include="EntityModels\Log.cs" />
+    <Compile Include="EntityModels\Login.cs" />
     <Compile Include="EntityModels\Part.cs" />
+    <Compile Include="EntityModels\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EntityModels\Sale.cs" />
     <Compile Include="EntityModels\Supplier.cs" />
-    <Compile Include="ViewModels\AboutCarVm.cs" />
-    <Compile Include="ViewModels\AboutCustomerVm.cs" />
-    <Compile Include="ViewModels\AddPartSupplierVm.cs" />
-    <Compile Include="ViewModels\AllPartVm.cs" />
-    <Compile Include="ViewModels\DeletePartVm.cs" />
-    <Compile Include="ViewModels\EditCustomerVm.cs" />
-    <Compile Include="ViewModels\EditPartVm.cs" />
-    <Compile Include="ViewModels\SaleVm.cs" />
-    <Compile Include="ViewModels\CarVm.cs" />
-    <Compile Include="ViewModels\AllCustomerVm.cs" />
-    <Compile Include="ViewModels\PartVm.cs" />
-    <Compile Include="ViewModels\SupplierVm.cs" />
+    <Compile Include="ViewModels\Cars\AboutCarVm.cs" />
+    <Compile Include="ViewModels\Customers\AboutCustomerVm.cs" />
+    <Compile Include="ViewModels\Logs\AllLogsPageVm.cs" />
+    <Compile Include="ViewModels\Logs\AllLogsVm.cs" />
+    <Compile Include="ViewModels\Logs\DeleteLogVm.cs" />
+    <Compile Include="ViewModels\Sales\AddSaleCarVm.cs" />
+    <Compile Include="ViewModels\Sales\AddSaleConfirmationVm.cs" />
+    <Compile Include="ViewModels\Sales\AddSaleCustomerVm.cs" />
+    <Compile Include="ViewModels\Suppliers\AddPartSupplierVm.cs" />
+    <Compile Include="ViewModels\Sales\AddSaleVm.cs" />
+    <Compile Include="ViewModels\Parts\AllPartVm.cs" />
+    <Compile Include="ViewModels\Parts\DeletePartVm.cs" />
+    <Compile Include="ViewModels\Customers\EditCustomerVm.cs" />
+    <Compile Include="ViewModels\Parts\EditPartVm.cs" />
+    <Compile Include="ViewModels\Sales\SaleVm.cs" />
+    <Compile Include="ViewModels\Cars\CarVm.cs" />
+    <Compile Include="ViewModels\Customers\AllCustomerVm.cs" />
+    <Compile Include="ViewModels\Parts\PartVm.cs" />
+    <Compile Include="ViewModels\Suppliers\DeleteSupplierVm.cs" />
+    <Compile Include="ViewModels\Suppliers\EditSupplierVm.cs" />
+    <Compile Include="ViewModels\Suppliers\SupplierAllVm.cs" />
+    <Compile Include="ViewModels\Suppliers\SupplierVm.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
