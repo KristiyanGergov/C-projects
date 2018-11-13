@@ -1,0 +1,42 @@
+﻿@using BazarCamera.Domain.Entity
+@model IEnumerable<Camera>
+
+@{
+    ViewBag.Title = "All";
+}
+<link href="~/Styles/All.css" rel="stylesheet" />
+<script src="~/Scripts/Logout.js"></script>
+<div>
+    <h2>All</h2>
+    <p>@Html.ActionLink("Add", "Add", null,new {@class ="btn btn-primary" })</p>
+    
+    <form asp-controller="Camera" asp-action="All">
+        <div class="form-group">
+            <p>
+                <input type="text" name="name" class="form-control pull-left" placeholder="Search camera...">
+                <input type="submit" class="btn btn-success right" value="Search" />
+            </p>
+        </div>
+    </form>
+    @foreach (var camera in Model)
+    {
+        <div>
+            <p>
+                <img src="@camera.ImageUrl"
+                     alt="" width="100" height="100" />
+                <strong>@camera.Make  @camera.Model</strong>
+                <span>$@camera.Price</span>
+                @Html.ActionLink("Details", "Details", "Camera", new { id = camera.Id }, new { @id = "details", @class = "font-color-red" })
+                @if (camera.Quantity != 0)
+                {
+                    <span class="text-success">IN STOCK</span>
+                }
+                else
+                {
+                    <span class="text-danger">OUT OF STOCK</span>
+                }
+            </p>
+
+        </div>
+    }
+</div>

@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.Label("Username")
+        @Html.Editor("username", new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <div>
+        @Html.Label("Password")
+        @Html.Editor("Password", new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+    </div>
+    <div>
+        @Html.Label("ConfirmPassword")
+        @Html.Editor("ConfirmPassword", new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+    </div>
+    <div>
+        @Html.Label("Email")
+        @Html.Editor("Email", new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <div>
+        @Html.Label("Phone")
+        @Html.Editor("phone", new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <br/>
+    <div class="form-group">
+        <input type="submit" name="name" class="btn btn-primary" value="Register"/>
+    </div>
+
+}
