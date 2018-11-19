@@ -29,6 +29,7 @@ namespace MoleculeTable
             InitializeComponent();
             Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("bg-BG");
             toolTip1.SetToolTip(pickColor, "Избери цвят");
+            toolTip1.SetToolTip(Create, "Въведете съединението, което искате да визуализирате");
             this.dataGridView.RowTemplate.Height = 100;
             utility.PopulateNamesComboBox(dataGridView);
         }

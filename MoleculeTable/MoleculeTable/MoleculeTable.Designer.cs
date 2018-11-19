@@ -85,11 +85,12 @@ namespace MoleculeTable
             this.Order,
             this.Delete});
             this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView.Location = new System.Drawing.Point(13, 47);
+            this.dataGridView.Location = new System.Drawing.Point(17, 58);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView.RowTemplate.Height = 35;
-            this.dataGridView.Size = new System.Drawing.Size(1048, 405);
+            this.dataGridView.Size = new System.Drawing.Size(1397, 498);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             this.dataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_CellFormatting);
@@ -156,9 +157,10 @@ namespace MoleculeTable
             // Add
             // 
             this.Add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Add.Location = new System.Drawing.Point(13, 464);
+            this.Add.Location = new System.Drawing.Point(17, 571);
+            this.Add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(75, 23);
+            this.Add.Size = new System.Drawing.Size(100, 28);
             this.Add.TabIndex = 1;
             this.Add.Text = "Добави";
             this.Add.UseVisualStyleBackColor = true;
@@ -167,9 +169,10 @@ namespace MoleculeTable
             // Save
             // 
             this.Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Save.Location = new System.Drawing.Point(824, 464);
+            this.Save.Location = new System.Drawing.Point(1099, 571);
+            this.Save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(75, 23);
+            this.Save.Size = new System.Drawing.Size(100, 28);
             this.Save.TabIndex = 2;
             this.Save.Text = "Запази";
             this.Save.UseVisualStyleBackColor = true;
@@ -178,9 +181,10 @@ namespace MoleculeTable
             // Generate
             // 
             this.Generate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Generate.Location = new System.Drawing.Point(986, 464);
+            this.Generate.Location = new System.Drawing.Point(1315, 571);
+            this.Generate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Generate.Name = "Generate";
-            this.Generate.Size = new System.Drawing.Size(75, 23);
+            this.Generate.Size = new System.Drawing.Size(100, 28);
             this.Generate.TabIndex = 5;
             this.Generate.Text = "Генерирай";
             this.Generate.UseVisualStyleBackColor = true;
@@ -190,10 +194,11 @@ namespace MoleculeTable
             // 
             this.compoundName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.compoundName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.compoundName.Location = new System.Drawing.Point(905, 18);
+            this.compoundName.Location = new System.Drawing.Point(1207, 22);
+            this.compoundName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.compoundName.Multiline = true;
             this.compoundName.Name = "compoundName";
-            this.compoundName.Size = new System.Drawing.Size(108, 18);
+            this.compoundName.Size = new System.Drawing.Size(144, 22);
             this.compoundName.TabIndex = 6;
             this.compoundName.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
@@ -201,9 +206,10 @@ namespace MoleculeTable
             // 
             this.compoundLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.compoundLabel.AutoSize = true;
-            this.compoundLabel.Location = new System.Drawing.Point(780, 19);
+            this.compoundLabel.Location = new System.Drawing.Point(1040, 23);
+            this.compoundLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.compoundLabel.Name = "compoundLabel";
-            this.compoundLabel.Size = new System.Drawing.Size(119, 13);
+            this.compoundLabel.Size = new System.Drawing.Size(154, 17);
             this.compoundLabel.TabIndex = 7;
             this.compoundLabel.Text = "Име на съединението";
             // 
@@ -219,9 +225,10 @@ namespace MoleculeTable
             // Preview
             // 
             this.Preview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Preview.Location = new System.Drawing.Point(905, 464);
+            this.Preview.Location = new System.Drawing.Point(1207, 571);
+            this.Preview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Preview.Name = "Preview";
-            this.Preview.Size = new System.Drawing.Size(75, 23);
+            this.Preview.Size = new System.Drawing.Size(100, 28);
             this.Preview.TabIndex = 8;
             this.Preview.Text = "Преглед";
             this.Preview.UseVisualStyleBackColor = true;
@@ -229,9 +236,10 @@ namespace MoleculeTable
             // 
             // Create
             // 
-            this.Create.Location = new System.Drawing.Point(127, 14);
+            this.Create.Location = new System.Drawing.Point(169, 17);
+            this.Create.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(146, 22);
+            this.Create.Size = new System.Drawing.Size(195, 27);
             this.Create.TabIndex = 10;
             this.Create.Text = "Създай ново съединение";
             this.Create.UseVisualStyleBackColor = true;
@@ -240,18 +248,20 @@ namespace MoleculeTable
             // compoundElements
             // 
             this.compoundElements.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.compoundElements.Location = new System.Drawing.Point(13, 16);
+            this.compoundElements.Location = new System.Drawing.Point(17, 20);
+            this.compoundElements.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.compoundElements.Multiline = true;
             this.compoundElements.Name = "compoundElements";
-            this.compoundElements.Size = new System.Drawing.Size(108, 18);
+            this.compoundElements.Size = new System.Drawing.Size(144, 22);
             this.compoundElements.TabIndex = 11;
             // 
             // minus
             // 
             this.minus.Enabled = false;
-            this.minus.Location = new System.Drawing.Point(279, 13);
+            this.minus.Location = new System.Drawing.Point(372, 16);
+            this.minus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.minus.Name = "minus";
-            this.minus.Size = new System.Drawing.Size(23, 23);
+            this.minus.Size = new System.Drawing.Size(31, 28);
             this.minus.TabIndex = 13;
             this.minus.Text = "-";
             this.minus.UseVisualStyleBackColor = true;
@@ -260,9 +270,10 @@ namespace MoleculeTable
             // plus
             // 
             this.plus.Enabled = false;
-            this.plus.Location = new System.Drawing.Point(342, 13);
+            this.plus.Location = new System.Drawing.Point(456, 16);
+            this.plus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plus.Name = "plus";
-            this.plus.Size = new System.Drawing.Size(23, 23);
+            this.plus.Size = new System.Drawing.Size(31, 28);
             this.plus.TabIndex = 14;
             this.plus.Text = "+";
             this.plus.UseVisualStyleBackColor = true;
@@ -271,9 +282,10 @@ namespace MoleculeTable
             // percantage
             // 
             this.percantage.AutoSize = true;
-            this.percantage.Location = new System.Drawing.Point(306, 18);
+            this.percantage.Location = new System.Drawing.Point(408, 22);
+            this.percantage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.percantage.Name = "percantage";
-            this.percantage.Size = new System.Drawing.Size(33, 13);
+            this.percantage.Size = new System.Drawing.Size(44, 17);
             this.percantage.TabIndex = 15;
             this.percantage.Text = "100%";
             // 
@@ -284,20 +296,21 @@ namespace MoleculeTable
             this.pickColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pickColor.FlatAppearance.BorderSize = 0;
             this.pickColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pickColor.Location = new System.Drawing.Point(1025, 7);
+            this.pickColor.Location = new System.Drawing.Point(1367, 9);
+            this.pickColor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pickColor.Name = "pickColor";
-            this.pickColor.Size = new System.Drawing.Size(36, 36);
+            this.pickColor.Size = new System.Drawing.Size(48, 44);
             this.pickColor.TabIndex = 16;
             this.pickColor.UseVisualStyleBackColor = true;
             this.pickColor.Click += new System.EventHandler(this.pickColor_Click);
             // 
             // MoleculeTableForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1084, 494);
+            this.ClientSize = new System.Drawing.Size(1445, 608);
             this.Controls.Add(this.pickColor);
             this.Controls.Add(this.percantage);
             this.Controls.Add(this.plus);
@@ -311,9 +324,10 @@ namespace MoleculeTable
             this.Controls.Add(this.Save);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.dataGridView);
-            this.MinimumSize = new System.Drawing.Size(1100, 533);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1461, 645);
             this.Name = "MoleculeTableForm";
-            this.Padding = new System.Windows.Forms.Padding(10, 20, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(13, 25, 13, 12);
             this.Text = "Molecule Table";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
